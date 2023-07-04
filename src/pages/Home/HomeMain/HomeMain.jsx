@@ -5,6 +5,7 @@ import Banner from './Banner';
 // import Footer from '../../../shared/Footer';
 import DonorsDivide from './DonorsDivide';
 import User from '../../../components/user';
+import WeProvides from './WeProvides';
 const HomeMain = () => {
     return (
         <div> 
@@ -24,6 +25,7 @@ const HomeMain = () => {
 
         // </Parallax> */}
         <Banner></Banner>
+        <WeProvides></WeProvides>
         <DonorsDivide></DonorsDivide>
         <User></User>
         </div>

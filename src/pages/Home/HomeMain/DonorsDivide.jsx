@@ -9,8 +9,8 @@ const DonorsDivide = () => {
         Aos.init()
     }, [])
     return (
-        <div className='bg-red-700 md:p-20 p-3 md:py-24 md:grid-cols-3 grid md:gap-5 mt-32'>
-            <div className='shadow-xl relative bg-white ' data-aos="fade-right"
+        <div className='bg-red-700 md:p-20 p-3   md:pt-20 md:grid-cols-3 grid md:gap-5 md:mt-20  '>
+            <div className='shadow-xl relative bg-white md:mt-0   md:mb-0 mb-2' data-aos="fade-right"
                 data-aos-duration="1500"
                 data-aos-easing="ease-in-sine">
                 <img src={img} alt="" />
@@ -19,7 +19,7 @@ const DonorsDivide = () => {
                     <p className='text-justify p-5 px-4 mt-5'>Certified donors are individuals who have undergone a thorough screening process and health assessment to determine their eligibility to donate blood. These assessments include reviewing medical history, conducting physical examinations, and testing for infectious diseases to ensure the safety of both donors and recipients. Certified donors have met the necessary criteria and are recognized as suitable candidate</p>
                 </div>
             </div>
-            <div className='shadow-xl relative bg-white ' data-aos="zoom-in-up"
+            <div className='shadow-xl relative bg-white md:mb-0 mb-2' data-aos="zoom-in-up"
                 data-aos-duration="1500"
                 data-aos-easing="ease-in-sine">
                 <img src={img1} alt="" />
