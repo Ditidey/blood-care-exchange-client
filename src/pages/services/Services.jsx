@@ -3,7 +3,10 @@ import React from 'react';
 const Services = () => {
     return (
         <div>
-            services
+            <img src="../../../public/istockphoto-1141048856-612x612.jpg" alt="" />
+            <img src="../../../public/istockphoto-1141048856-612x612.jpg" alt="" />
+            <img src="../../../public/istockphoto-1141048856-612x612.jpg" alt="" />
+            <img src="../../../public/istockphoto-1141048856-612x612.jpg" alt="" />
         </div>
     );
 };

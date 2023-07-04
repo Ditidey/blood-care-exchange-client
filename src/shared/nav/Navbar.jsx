@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className='flex relative justify-around p-5'>
+            <nav className='flex relative justify-around p-5 z-10'>
                 <div className='md:hidden'>
                     {
                         isOpen ? <RxCross2 className='w-10 h-8 mt-1 me-5' onClick={()=>setIsOpen(!isOpen)}></RxCross2> : 
@@ -45,6 +45,10 @@ const Navbar = () => {
                                     isActive ? "text-red-600" : ""}>Become Donors</NavLink>
                             </div>
                         )}
+
+                        {/* todo
+                        notification bar
+                        logout */}
                     </ul>
                 </div>
                 <div>

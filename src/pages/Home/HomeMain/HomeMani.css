@@ -1,0 +1,25 @@
+.animation{
+    display: block;
+    position: relative;
+    z-index: 10;
+    /* background-color: rgb(253, 242, 242); */
+}
+.layer{
+    background-position: bottom center;
+    background-size: auto 1200px;
+    background-repeat: repeat-x;
+    width: 100%;
+    position: absolute;
+}
+.layer.parallax{
+    position: fixed;
+}
+#blood1{
+    background-image: url('../../../../public/download.jpg');
+}
+#blood2{
+    background-image: url('../../../../public/istockphoto-621391778-170667a.webp');
+}
+#blood3{
+    background-image: url('../../../../public/istockphoto-860895490-170667a.webp');
+}
