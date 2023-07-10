@@ -5,14 +5,16 @@ import img1 from '../../../../public/donate.jpg';
 import img2 from '../../../../public/consul.jpg';
 import img3 from '../../../../public/img3.webp';
 import Aos from 'aos';
+import SecTitle from '../../../components/shared/secTitle';
 
 const WeProvides = () => {
     useEffect(() => {
         Aos.init()
     }, [])
     return (
-        <div className='md:mt-28 mt-96 pt-96 md:pt-0 md:p-10 p-3'>
-            <h2>We provides</h2>
+        <div className='md:mt-44 mt-96 pt-96 md:pt-0 md:p-10 p-3'>
+            <br />
+             <SecTitle title={'We Provide'}></SecTitle>
             <div className='grid md:grid-cols-4 gap-6 pt-40 md:pt-0'>
                  <div className='py-3 shadow-xl rounded-md' data-aos="zoom-in-right" data-aos-duration="3000">
                     <img src={img} alt=""  className='w-full h-1/2'/>

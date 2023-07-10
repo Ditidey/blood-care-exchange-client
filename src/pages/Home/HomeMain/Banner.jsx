@@ -17,7 +17,7 @@ const Banner = () => {
                   <h2 className='md:text-6xl text-2xl mx-5 md:ms-20 text-white font-serif font-bold '>We are providing <br /> treatment, test, consultancy <br /> and   transfer of blood.</h2>
 
                   <div className='md:mt-36 mt-3 md:ms-20'>
-                    <button className=' md:ms-10 btn p-4 px-10 text-ellipsis uppercase text-red-600 md:text-xl font-bold bg-red-50 mx-5'>Become a Donor <br /> <Link className='md:text-sm text-xs text-blue-300'>Am I Eligible?</Link></button>
+                    <button className=' md:ms-10 btn p-4 px-10 text-ellipsis uppercase text-red-600 md:text-xl font-bold bg-red-50 mx-5'> <Link to='/auth-layout/become-donor'>Become a Donor</Link> <br /> <Link className='md:text-sm text-xs text-blue-300'>Am I Eligible?</Link></button>
                     
                     <button className='mt-2 btn p-4 text-ellipsis uppercase text-red-600 md:text-xl font-bold bg-red-50 mx-5'>Book an appointment <br /> <Link className='md:text-sm text-xs text-blue-300'>What should I do?</Link></button>
                   </div>

@@ -6,6 +6,7 @@ import Banner from './Banner';
 import DonorsDivide from './DonorsDivide';
 import User from '../../../components/user';
 import WeProvides from './WeProvides';
+import HomeConsultan from './HomeConsultan';
 const HomeMain = () => {
     return (
         <div> 
@@ -26,6 +27,7 @@ const HomeMain = () => {
         // </Parallax> */}
         <Banner></Banner>
         <WeProvides></WeProvides>
+        <HomeConsultan></HomeConsultan>
         <DonorsDivide></DonorsDivide>
         <User></User>
         </div>

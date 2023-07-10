@@ -4,12 +4,17 @@ import img1 from '../../../../public/istockphoto-1418786649-612x612.jpg';
 import img2 from '../../../../public/istockphoto-627292166-612x612.jpg';
 import { Link } from 'react-router-dom';
 import Aos from 'aos';
+import SecTitle from '../../../components/shared/secTitle';
 const DonorsDivide = () => {
     useEffect(() => {
         Aos.init()
     }, [])
     return (
-        <div className='bg-red-700 md:p-20 p-3   md:pt-20 md:grid-cols-3 grid md:gap-5 md:mt-20  '>
+        <div className=' md:pt-20     '>
+            <SecTitle title={' Donors Categories'}></SecTitle>
+            <div className='bg-red-700 p-3 md:grid-cols-3 grid md:gap-5  mt-5 py-20 md:px-20 px-3'>
+
+            
             <div className='shadow-xl relative bg-white md:mt-0   md:mb-0 mb-2' data-aos="fade-right"
                 data-aos-duration="1500"
                 data-aos-easing="ease-in-sine">
@@ -36,6 +41,7 @@ const DonorsDivide = () => {
                     <button className='text-red-50 bg-red-800 p-3 absolute top-64 ms-32 font-bold text-xl'><Link>Emergency Donors</Link></button>
                     <p className='text-justify p-5 px-4 mt-5'>Emergency donors are individuals who step forward to donate blood in times of crisis or urgent need. They respond to public appeals for blood donations during emergencies, natural disasters, or when blood supplies are critically low.</p>
                 </div>
+            </div>
             </div>
         </div>
     );

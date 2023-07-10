@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import Wave from 'react-wavify';
-// import UserSlider from './UserSlider';
+import SecTitle from './shared/secTitle';
 
 const User = () => {
     const [users, setUsers] = useState();;
@@ -16,8 +16,10 @@ const User = () => {
             .then(data => setUsers(data))
     }, [])
     return (
-        <div>
+        <div className='mt-10'>
+            <SecTitle title={'Delighted Donors'}></SecTitle>
             <div className='flex justify-center items-start overflow-hidden w-full h-1/2'>
+
                 <Swiper
                     spaceBetween={30}
                     effect='coverflow'
@@ -72,13 +74,20 @@ const User = () => {
                 speed: 0.15,
                 points: 5
             }}>
+
                 <defs>
+
                     <linearGradient id="gradient" gradientTransform="rotate(90)">
-                        {/* <stop offset="0%" stopColor="#d4af37" /> */}
+                       
                         <stop offset="80%" stopColor="#f00" />
+
                     </linearGradient>
                 </defs>
+                {/* <foreignObject  x="150" y="20"  width="100%" height="100%" className='relative'>
+                    <p className='ms-10  '>Your blood has the power to heal, the power to save lives. Share it generously.</p>
+                </foreignObject> */}
             </Wave>
+         
         </div>
     );
 };
