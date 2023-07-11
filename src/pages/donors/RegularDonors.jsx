@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from '../../reducers/usersReduce';
 // import { fetchUsers } from '../../reducers/Reduce';
  import {FiLoader, FiMessageSquare} from 'react-icons/fi'
+import { Link } from 'react-router-dom';
 
 const RegularDonors = () => {
     const dispatch = useDispatch();
@@ -10,10 +11,10 @@ const RegularDonors = () => {
     const loading = useSelector((state) => state.users.loading);
     const err = useSelector((state) => state.users.error);
     const regularUsers = users?.filter(user => user.donor_class == 'regular')
-    console.log(users, loading, err)
+    // console.log(users, loading, err)
     useEffect(() => {
         dispatch(fetchUsers())
-        // console.log(dispatch)
+        
     }, [dispatch])
 
     if(loading){
@@ -36,7 +37,7 @@ const RegularDonors = () => {
                             <p>Last donation date: {user.last_donation}</p>
                             
                         </div>
-                        <button className='bg-red-800 ps-32 text-white p-3 mt-24 inline-flex w-full '> Message me <FiMessageSquare className='mt-2 ms-1 animate-pulse'></FiMessageSquare></button>
+                        <button className='bg-red-800 ps-32 text-white p-3 mt-24 inline-flex w-full '>  <Link to={`/message-web/${user._id}`} className='inline-flex'>Message me <FiMessageSquare className='mt-2 ms-1 animate-pulse'></FiMessageSquare></Link> </button>
                     </div>)
                 }
             </div>

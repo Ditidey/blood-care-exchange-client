@@ -11,6 +11,7 @@ import BecomeDonors from "../pages/donors/BecomeDonors";
 import RegularDonors from "../pages/donors/RegularDonors";
 import RegisteredDonors from "../pages/donors/RegisteredDonors";
 import Platelet from "../pages/donors/Platelet";
+import MessageWebSo from "../components/shared/MessageWebSo";
 
 
 const router = createBrowserRouter([
@@ -31,8 +32,8 @@ const router = createBrowserRouter([
                 element: <BloodTest></BloodTest>
             },
             {
-               path: '/blood-trans',
-               element: <BloodTrans></BloodTrans>
+                path: '/blood-trans',
+                element: <BloodTrans></BloodTrans>
             },
             {
                 path: '/regular-donors',
@@ -45,6 +46,9 @@ const router = createBrowserRouter([
             {
                 path: '/platelet-donors',
                 element: <Platelet></Platelet>
+            }, {
+                path: '/message-web/:id',
+                element: <MessageWebSo></MessageWebSo>
             }
 
         ]

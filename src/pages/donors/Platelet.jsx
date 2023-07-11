@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {FiLoader, FiMessageSquare} from 'react-icons/fi';
 import { fetchUsers } from '../../reducers/usersReduce';
+import { Link } from 'react-router-dom';
 
 const Platelet = () => {
     const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const Platelet = () => {
                             <p>Last donation date: {user.last_donation}</p>
                             
                         </div>
-                        <button className='bg-red-800 ps-32 text-white p-3 mt-20 inline-flex w-full '> Message me <FiMessageSquare className='mt-2 ms-1 animate-pulse'></FiMessageSquare></button>
+                        <button className='bg-red-800 ps-32 text-white p-3 mt-20 inline-flex w-full '><Link to={`/message-web/${user._id}`} className='inline-flex'>Message me <FiMessageSquare className='mt-2 ms-1 animate-pulse'></FiMessageSquare></Link></button>
                     </div>)
                 }
             </div>
