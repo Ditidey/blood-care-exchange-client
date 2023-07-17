@@ -16,7 +16,7 @@ const User = () => {
             .then(data => setUsers(data))
     }, [])
     return (
-        <div className='mt-10'>
+        <div className='mt-24'>
             <SecTitle title={'Delighted Donors'}></SecTitle>
             <div className='flex justify-center items-start overflow-hidden w-full h-1/2'>
 

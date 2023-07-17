@@ -27,7 +27,7 @@ const HomeConsultan = () => {
                             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                             className="mySwiper"
                         >
-                            <SwiperSlide className='ps-20'>
+                            <SwiperSlide className='md:ps-20 ps-2'>
                                 <div className='grid md:grid-cols-3 gap-5 md:px-20 '>
                                     <div className='border-4 border-white p-5 text-white w-[320px] h-[400px]'>
                                         <h2 className='text-center text-2xl font-bold mb-2'>Bone Marrow Transplantation</h2>
@@ -56,7 +56,7 @@ const HomeConsultan = () => {
                                 </div>
                             </SwiperSlide>
 
-                            <SwiperSlide className='ps-20'>
+                            <SwiperSlide className='md:ps-20 ps-2'>
                                 <div className='grid md:grid-cols-3 gap-5 md:px-20 '>
                                     <div className='border-4 border-white p-5 text-white w-[320px] h-[400px]'>
                                         <h2 className='text-center text-2xl font-bold mb-2'>Chemotherapy</h2>

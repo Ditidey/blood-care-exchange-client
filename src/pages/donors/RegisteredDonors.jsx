@@ -34,6 +34,7 @@ const RegisteredDonors = () => {
                             <h2 className='text-xl font-serif font-bold relative'>{user.name} <span className='text-red-700 font-mono absolute -top-20 text-sm uppercase border-2 px-1'>{user.donor_class}</span></h2>
                             <p>Location: {user.location}</p>
                             <p>Last donation date: {user.last_donation}</p>
+                            <p>Group: {user.group}</p>
                             
                         </div>
                         <button className='bg-red-800 ps-32 text-white p-3 mt-20 inline-flex w-full '><Link to={`/message-web/${user._id}`} className='inline-flex'>Message me <FiMessageSquare className='mt-2 ms-1 animate-pulse'></FiMessageSquare></Link></button>

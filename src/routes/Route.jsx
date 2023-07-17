@@ -12,6 +12,10 @@ import RegularDonors from "../pages/donors/RegularDonors";
 import RegisteredDonors from "../pages/donors/RegisteredDonors";
 import Platelet from "../pages/donors/Platelet";
 import MessageWebSo from "../components/shared/MessageWebSo";
+import ProtectedRoute from "./ProtectedRoute";
+import DashLayout from "../layouts/DashLayout";
+import BloodGroupDonors from "../pages/donors/BloodGroupDonors";
+import BloodTestBooking from "../pages/services/BloodTestBooking";
 
 
 const router = createBrowserRouter([
@@ -46,9 +50,18 @@ const router = createBrowserRouter([
             {
                 path: '/platelet-donors',
                 element: <Platelet></Platelet>
-            }, {
+            },
+            {
+              path: '/group-donors',
+              element: <BloodGroupDonors></BloodGroupDonors>
+            },
+             {
                 path: '/message-web/:id',
-                element: <MessageWebSo></MessageWebSo>
+                element: <ProtectedRoute><MessageWebSo></MessageWebSo></ProtectedRoute>
+            },
+            {
+                path: '/test-book',
+                element: <BloodTestBooking></BloodTestBooking>
             }
 
         ]
@@ -68,6 +81,15 @@ const router = createBrowserRouter([
             {
                 path: 'become-donor',
                 element: <BecomeDonors></BecomeDonors>
+            }
+        ]
+    },
+    {
+        path: 'dash-layout',
+        element: <DashLayout></DashLayout>,
+        children: [
+            {
+                path: 'admin-pro',
             }
         ]
     }

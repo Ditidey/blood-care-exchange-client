@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
 import { contextProvider } from '../../contextProviders/AuthProvider';
-import logo from '../../../public/logo.png';
 import { useForm } from 'react-hook-form';
 import useAxios from '../../components/hooks/useAxios';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
 
 const BecomeDonors = () => {
     const { user } = useContext(contextProvider)

@@ -1,24 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 // import {AiOutlineLock} from 'react-icons/ai';
 import {GiSelfLove} from 'react-icons/gi';
 import {BiCurrentLocation, BiLogoZoom, BiCalendar} from 'react-icons/bi';
 import Aos from 'aos';
+import BloodDonationModal from '../../../components/modals/BloodDonationModal';
 
 const Banner = () => {
    useEffect(() => {
       Aos.init()
   }, [])
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
     return (
         <div className=''>
-            <div className='relative'>
-                <img src="../../../../public/download (2).jpg" alt=""  className='w-full h-2/4  '/>
+            <div className='relative md:pb-10 pb-60 w-full'  style={{backgroundImage: `url("../../../../public/download (2).jpg")`, backgroundSize: 'cover'}}>
+                <img src="../../../../public/download (2).jpg" alt=""  className='w-full md:h-2/4 h-full'/>
                 <div className='absolute md:top-36 top-5 '>
                   <h2 className='md:text-6xl text-2xl mx-5 md:ms-20 text-white font-serif font-bold '>We are providing <br /> treatment, test, consultancy <br /> and   transfer of blood.</h2>
 
                   <div className='md:mt-36 mt-3 md:ms-20'>
-                    <button className=' md:ms-10 btn p-4 px-10 text-ellipsis uppercase text-red-600 md:text-xl font-bold bg-red-50 mx-5'> <Link to='/auth-layout/become-donor'>Become a Donor</Link> <br /> <Link className='md:text-sm text-xs text-blue-300'>Am I Eligible?</Link></button>
-                    
+                    <button className=' md:ms-10 btn p-4 px-10 text-ellipsis uppercase text-red-600 md:text-xl font-bold bg-red-50 mx-5'> <Link to='/auth-layout/become-donor'>Become a Donor</Link> <br /> <Link className='md:text-sm text-xs text-blue-300' onClick={handleOpenModal}>Am I Eligible?</Link></button>
+                    <BloodDonationModal isOpen={modalOpen} onClose={handleCloseModal} />
                     <button className='mt-2 btn p-4 text-ellipsis uppercase text-red-600 md:text-xl font-bold bg-red-50 mx-5'>Book an appointment <br /> <Link className='md:text-sm text-xs text-blue-300'>What should I do?</Link></button>
                   </div>
 
@@ -41,7 +53,7 @@ const Banner = () => {
                         <p className='text-justify px-2 pb-4'>  We offer an online blood booking system. Individuals or hospitals can request specific blood types, and we promptly arrange for the delivery or onsite donation, depending on the situation.</p>
                      </div>
                       
-                     <div data-aos="zoom-in-left" data-aos-duration="1500" className='bg-red-50 md:relative p-4 rounded-md -top-24 shadow-md md:mx-4'>
+                     <div data-aos="zoom-in-left" data-aos-duration="1500" className='bg-red-50 md:relative p-4 rounded-md -top-24 shadow-md md:mb-0'>
                         <GiSelfLove className='text-red-600 bg-white rounded-full md:w-24 md:h-24 w-12 h-12 md:absolute md:-top-14 p-4 md:mx-24 shadow-md'></GiSelfLove>
                         <h2 className='md:mt-8 text-center text-red-600 text-lg font-bold'><Link to='/blood-test'>Learn about blood</Link></h2> <br />
                         <p className='text-justify px-2 pb-4'>We are committed to raising awareness about the significance of blood donation and the impact it can have on saving lives.</p>
