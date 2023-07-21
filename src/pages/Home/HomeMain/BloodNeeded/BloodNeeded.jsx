@@ -14,7 +14,7 @@ const BloodNeeded = () => {
         setOpenModal(false)
     }
     useEffect(() => {
-        fetch('http://localhost:5000/blood-posts')
+        fetch('https://blood-care-server.vercel.app/blood-posts')
             .then(res => res.json())
             .then(data => {
                 setBloods(data)
@@ -31,7 +31,7 @@ const BloodNeeded = () => {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
-            fetch(`http://localhost:5000/blood-posts/${id}`, {
+            fetch(`https://blood-care-server.vercel.app/blood-posts/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

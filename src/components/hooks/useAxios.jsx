@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosFetching = axios.create({
-    baseURL: 'http://localhost:5000/'
+    baseURL: 'https://blood-care-server.vercel.app/'
 })
 const useAxios = () => {
     return [axiosFetching]
