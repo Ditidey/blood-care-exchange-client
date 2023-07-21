@@ -1,23 +1,24 @@
 import {   createSlice } from '@reduxjs/toolkit';
 import useAxios from '../components/hooks/useAxios.jsx';
  
- export const fetchUsers = () => async (dispatch) => {
+ export const fetchTreatments = () => async (dispatch) => {
   const [axiosFetching] = useAxios();
   dispatch(fetchDataStart());
    try {
-    const response = await axiosFetching.get('/users');
+    const response = await axiosFetching.get('/treatments');
     dispatch(fetchDataSuccess(response.data));
   } catch (error) {
     dispatch(fetchDataFailure(error.message));
   }
 };
+
 const initialState = {
-  users: [],
+  treatments: [],
   loading: false,
   error: '',
 };
-  const userSlice = createSlice({
-    name: 'users',
+  const treatmentSlice = createSlice({
+    name: 'treatments',
     initialState,
     reducers: {
       fetchDataStart(state) {
@@ -39,5 +40,5 @@ const initialState = {
     
 });
  
-export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } = userSlice.actions;
-export default userSlice.reducer;
+export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } = treatmentSlice.actions;
+export default treatmentSlice.reducer;

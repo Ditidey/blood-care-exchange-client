@@ -5,19 +5,20 @@ import useAxios from '../components/hooks/useAxios.jsx';
   const [axiosFetching] = useAxios();
   dispatch(fetchDataStart());
    try {
-    const response = await axiosFetching.get('/users');
+    const response = await axiosFetching.get('/doctors');
     dispatch(fetchDataSuccess(response.data));
   } catch (error) {
     dispatch(fetchDataFailure(error.message));
   }
 };
+
 const initialState = {
-  users: [],
+  doctors: [],
   loading: false,
   error: '',
 };
-  const userSlice = createSlice({
-    name: 'users',
+  const doctorSlice = createSlice({
+    name: 'doctors',
     initialState,
     reducers: {
       fetchDataStart(state) {
@@ -39,5 +40,5 @@ const initialState = {
     
 });
  
-export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } = userSlice.actions;
-export default userSlice.reducer;
+export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } = doctorSlice.actions;
+export default doctorSlice.reducer;

@@ -23,8 +23,8 @@ const ServiceHome = () => {
                     </p>
 
                 </div>
-                <div className='grid-cols-2 md:p-6 p-3 md:ms-20 flex justify-between'>
-                    <div className='mt-32'>
+                <div className='grid-cols-2 md:p-6 p-3 md:ms-20 md:flex md:justify-between'>
+                    <div className='md:mt-32'>
                         <div className='shadow-lg p-5 bg-slate-50 w-[250px] h-[350px]'>
                             <FaCalendarTimes className='text-red-800 w-16 h-16 bg-slate-50 p-3 ms-2 mt-5'></FaCalendarTimes>
                             <h2 className='text-2xl font-bold mb-6'>Check Appointment</h2>
@@ -37,7 +37,7 @@ const ServiceHome = () => {
                         </div>                     
 
                     </div>
-                    <div className='mt-2 ms-14'>
+                    <div className='mt-4 md:ms-14'>
                         <div className='shadow-lg p-5 bg-slate-50 w-[250px] h-[350px]'>
                             <FaEarlybirds className='text-red-800 w-16 h-16 bg-slate-50 p-3 ms-2 mt-5'></FaEarlybirds>
                             <h2 className='text-2xl font-bold mb-6'>Emergency Blood Requests</h2>

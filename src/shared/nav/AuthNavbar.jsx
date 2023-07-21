@@ -7,7 +7,7 @@ const AuthNavbar = ({title}) => {
         <div className='mb-5'>
             <div className='flex pt-5'>
                 <Link to='/' className='flex'>
-                    <img src={logo} alt="" className='w-10 h-10 mt-5 ms-10 animate-pulse' />
+                    <img src={logo} alt="" className='w-10 h-10 mt-5 md:ms-10 ms-2 animate-pulse' />
                     <h1 className="text-3xl font-bold   text-red-700 pt-5 ps-2">BloodCareExchange</h1>
                 </Link>
             </div>

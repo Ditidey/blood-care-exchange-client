@@ -16,6 +16,13 @@ import ProtectedRoute from "./ProtectedRoute";
 import DashLayout from "../layouts/DashLayout";
 import BloodGroupDonors from "../pages/donors/BloodGroupDonors";
 import BloodTestBooking from "../pages/services/BloodTestBooking";
+import TransDonation from "../pages/services/TransDonation";
+import Treatment from "../pages/services/treatment/Treatment";
+import AllTreatment from "../pages/services/treatment/AllTreatment";
+import BloodTreatLearn from "../components/BloodTreatLearn";
+import UserProfile from "../pages/dashPage/userPages/UserProfile";
+import Research from "../pages/Home/Research";
+import BloodNeeded from "../pages/Home/HomeMain/BloodNeeded/BloodNeeded";
 
 
 const router = createBrowserRouter([
@@ -23,6 +30,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <MainLayout></MainLayout>,
         children: [
+            // home pages
             {
                 path: '/',
                 element: <HomeMain></HomeMain>
@@ -52,16 +60,44 @@ const router = createBrowserRouter([
                 element: <Platelet></Platelet>
             },
             {
-              path: '/group-donors',
-              element: <BloodGroupDonors></BloodGroupDonors>
+                path: '/group-donors',
+                element: <BloodGroupDonors></BloodGroupDonors>
             },
-             {
+            {
                 path: '/message-web/:id',
                 element: <ProtectedRoute><MessageWebSo></MessageWebSo></ProtectedRoute>
+            },
+            // services pages
+            {
+ 
             },
             {
                 path: '/test-book',
                 element: <BloodTestBooking></BloodTestBooking>
+            },
+            {
+                path: '/trans-donation',
+                element: <TransDonation></TransDonation>
+            },
+            {
+                path: '/treatment',
+                element: <Treatment></Treatment>
+            },
+            {
+                path: '/all-treatment',
+                element: <AllTreatment></AllTreatment>
+            },
+            {
+                path: '/treat-learn',
+                element: <BloodTreatLearn></BloodTreatLearn>
+            },
+            {
+                path: '/research',
+                element: <Research></Research>
+            },
+            {
+                path: '/blood-need',
+                element: <BloodNeeded></BloodNeeded>
             }
 
         ]
@@ -89,7 +125,8 @@ const router = createBrowserRouter([
         element: <DashLayout></DashLayout>,
         children: [
             {
-                path: 'admin-pro',
+                path: 'user-pro',
+                element: <UserProfile></UserProfile>
             }
         ]
     }

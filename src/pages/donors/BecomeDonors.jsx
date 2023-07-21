@@ -123,9 +123,9 @@ const BecomeDonors = () => {
                             </label> <br />
                             <select {...register('status')} className="border border-red-600 p-2 rounded-md w-full">
                                 <option value="">Select Status</option>
-                                <option value="Available">Donor</option>
-                                <option value="Not Available">Doctor</option>
-                                <option value="Not Available">User</option>
+                                <option value="donor">Donor</option>
+                                <option value="doctor">Doctor</option>
+                                <option value="user">User</option>
                             </select>
                         </div>
                     </div>

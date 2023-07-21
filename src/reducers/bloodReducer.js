@@ -1,23 +1,24 @@
 import {   createSlice } from '@reduxjs/toolkit';
-import useAxios from '../components/hooks/useAxios.jsx';
+import useAxios from '../components/hooks/useAxios';
  
- export const fetchUsers = () => async (dispatch) => {
+ 
+ export const fetchBloods = () => async (dispatch) => {
   const [axiosFetching] = useAxios();
   dispatch(fetchDataStart());
    try {
-    const response = await axiosFetching.get('/users');
+    const response = await axiosFetching.get('/blood-posts');
     dispatch(fetchDataSuccess(response.data));
   } catch (error) {
     dispatch(fetchDataFailure(error.message));
   }
 };
 const initialState = {
-  users: [],
+  bloods: [],
   loading: false,
   error: '',
 };
-  const userSlice = createSlice({
-    name: 'users',
+  const bloodSlice = createSlice({
+    name: 'bloods',
     initialState,
     reducers: {
       fetchDataStart(state) {
@@ -39,5 +40,5 @@ const initialState = {
     
 });
  
-export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } = userSlice.actions;
-export default userSlice.reducer;
+export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } = bloodSlice.actions;
+export default bloodSlice.reducer;

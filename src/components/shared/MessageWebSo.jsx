@@ -15,7 +15,7 @@ const MessageWebSo = () => {
   const [message, setMessage] = useState('');
   const [newSocket, setSocket] = useState(null);
   const [messages, setMessages] = useState([]);
-
+// console.log(user)
   useEffect(() => {
     dispatch(fetchUsers())
   }, [dispatch]);
@@ -32,7 +32,7 @@ const MessageWebSo = () => {
       console.log('Received message:', event.data);
       const receivedMessage ={
         message: event.data,
-        senderName: donor?.name || 'Donor',
+        senderName: user?.displayName || 'User',
         isUser: true,
         date: Date(),
       }
@@ -68,12 +68,19 @@ const MessageWebSo = () => {
          
          {
            messages.map(({message, senderName, isUser, date}, i) => 
-           <p key={i} className={isUser ? 'text-blue-600' : 'black'}>{senderName}: {message} <br />
-            <span className='text-xs'>{moment(date).format('h:mm a')}  </span></p>)
+           <div key={i} >
+            {
+              senderName != user.displayName && <><p>I am not available</p></>
+            }
+             <p  className={isUser ? 'text-blue-600 inline-flex' : 'black'}> {senderName}: 
+            {message}    
+            <span className='text-xs ms-1 mt-2'>{moment(date).format('h:mm a')}  </span>  </p>
+           </div>
+            )
          }
           
        </div>
-       <form action="" className='md:w-1/2 md:mx-auto h-full mt-5' onSubmit={handleSendMessage}>
+       <form action="" className='md:w-1/2 md:mx-auto h-full mt-5 overflow-auto' onSubmit={handleSendMessage}>
  
          <input type="text" placeholder='message' className='border rounded-xl p-2' value={message}
            onChange={(e) => setMessage(e.target.value)} />

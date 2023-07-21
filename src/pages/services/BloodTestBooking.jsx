@@ -24,12 +24,17 @@ const BloodTestBooking = () => {
         }
 
         const testInfo = {
-            data,
+            name: data.name,
+            email: data.email,
+            age: data.age,
+            address: data.address,
+            group: data.group,
+            reason: data.reason,
             date: date
         }
-        axiosFetching.post('/tests', testInfo)
+        axiosFetching.post('/treatments', testInfo)
         .then(res => {
-            console.log(res)
+            // console.log(res)
             if (res.data.insertedId) {
                 Swal.fire({
                     icon: 'success',
@@ -42,15 +47,15 @@ const BloodTestBooking = () => {
 
     }
     return (
-        <div className='flex justify-between'>
-            <BloodTest></BloodTest>
-            <div>
-                <h2 className='text-red-800 text-3xl font-bold font-serif text-center pt-3'>Book Now</h2>
+        <div className='md:flex md:justify-between'>
+            
+            <div className='md:px-10 bg-red-800 p-5'>
+                <h2 className='text-red-50 text-3xl font-bold font-serif text-center pt-3'>Book Now</h2>
                 <div className='w-[400px] h-[220px] mx-auto bg-yellow-100 my-5 p-4 shadow-md rounded-md'>
                     <Calendar onChange={onChange} value={valueDate} />
                 </div>
 
-                <form action="" onSubmit={handleSubmit(handleBloodTest)} className='w-[400px] mx-auto p-4 bg-red-50 shadow-md mb-5 '>
+                <form action="" onSubmit={handleSubmit(handleBloodTest)} className='w-[400px] mx-auto p-4 bg-red-100 shadow-md mb-5 '>
                     <div className='space-y-6'>
                         <div>
                             <label htmlFor="">Name</label> <br />
@@ -93,7 +98,7 @@ const BloodTestBooking = () => {
                     <input type="submit" value="Book now" className='border bg-red-900 text-white p-3 w-full hover:bg-red-600 mt-5' />
                 </form>
             </div>
-
+            <BloodTest></BloodTest>
         </div>
     );
 };

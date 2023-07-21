@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 const HomeConsultan = () => {
     return (
         <div className='my-20'>
@@ -35,7 +36,7 @@ const HomeConsultan = () => {
                                         <hr className='my-6 border-white' />
                                         <p className='text-center my-3'>24 hrs</p>
                                         <p className='text-center'>$200+</p>
-                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'>Book Now</button>
+                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'><Link to='/all-treatment'>Select Doctor</Link></button>
                                     </div>
                                     <div className='border-4 border-white p-5 text-white w-[320px] h-[400px]'>
                                         <h2 className='text-center text-2xl font-bold mb-2'>Iron Replacement Therapy</h2>
@@ -43,7 +44,7 @@ const HomeConsultan = () => {
                                         <hr className='my-8 border-white' />
                                         <p className='text-center my-3'>24 hrs</p>
                                         <p className='text-center'>$100+</p>
-                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'>Book Now</button>
+                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'><Link to='/all-treatment'>Select Doctor</Link></button>
                                     </div>
                                     <div className='border-4 border-white p-5 text-white w-[320px] h-[400px]'>
                                         <h2 className='text-center text-2xl font-bold mb-2'>Immunotherapy</h2>
@@ -51,7 +52,7 @@ const HomeConsultan = () => {
                                         <hr className='my-8 border-white' />
                                         <p className='text-center my-3'>24 hrs</p>
                                         <p className='text-center'>$500+</p>
-                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'>Book Now</button>
+                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'><Link to='/all-treatment'>Select Doctor</Link></button>
                                     </div>
                                 </div>
                             </SwiperSlide>
@@ -64,7 +65,7 @@ const HomeConsultan = () => {
                                         <hr className='my-6 border-white' />
                                         <p className='text-center my-3'>24 hrs</p>
                                         <p className='text-center'>$100+</p>
-                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'>Book Now</button>
+                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'><Link to='/all-treatment'>Select Doctor</Link></button>
                                     </div>
                                     <div className='border-4 border-white p-5 text-white w-[320px] h-[400px]'>
                                         <h2 className='text-center text-2xl font-bold mb-2'>Coagulation Therapy</h2>
@@ -72,7 +73,7 @@ const HomeConsultan = () => {
                                         <hr className='my-8 border-white' />
                                         <p className='text-center my-3'>24 hrs</p>
                                         <p className='text-center'>$400+</p>
-                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'>Book Now</button>
+                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'><Link to='/all-treatment'>Select Doctor</Link></button>
                                     </div>
                                     <div className='border-4 border-white p-5 text-white w-[320px] h-[400px]'>
                                         <h2 className='text-center text-2xl font-bold mb-2'>Targeted Therapy</h2>
@@ -80,7 +81,7 @@ const HomeConsultan = () => {
                                         <hr className='my-8 border-white' />
                                         <p className='text-center my-3'>24 hrs</p>
                                         <p className='text-center'>$100+</p>
-                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'>Book Now</button>
+                                        <button className='mt-10 ms-24 text-red-800 bg-white font-bold p-2 rounded-md'><Link to='/all-treatment'>Select Doctor</Link></button>
                                     </div>
                                 </div>
                             </SwiperSlide>

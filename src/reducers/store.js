@@ -1,15 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit';
 import usersReduce from './usersReduce';
-// import usersReduce from './usersReduce';
-// import usersReduce from './usersReduce';
-// import rootReducer from './rootReducer';
-// const {users} = usersReduce()
+import doctorsReducer from './doctorsReducer';
+import bloodReducer from './bloodReducer';
+import treatmentReducers from './treatmentReducers';
+ 
 const store = configureStore({
-  // reducer: users,
+   
   reducer: {
-    users: usersReduce
+    users: usersReduce,
+    doctors: doctorsReducer,
+    bloods: bloodReducer,
+    treatments: treatmentReducers
   }
 });
 
-// module.exports = store
+ 
 export default store;

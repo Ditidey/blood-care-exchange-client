@@ -6,7 +6,12 @@ import { RxCross2 } from 'react-icons/rx';
 import { contextProvider } from '../../contextProviders/AuthProvider';
 import useAxios from '../../components/hooks/useAxios';
 import BloodGroupDonors from '../../pages/donors/BloodGroupDonors';
-import {AiOutlineCloseCircle} from 'react-icons/ai';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchBloods } from '../../reducers/bloodReducer';
+// import io from 'socket.io-client';
+import { fetchUsers } from '../../reducers/usersReduce';
 
 const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -15,7 +20,17 @@ const Navbar = () => {
     const [axiosFetching] = useAxios();
     const [groups, setGroups] = useState();
     const [open, setOpen] = useState(false);
-    
+    const dispatch = useDispatch();
+    const bloods = useSelector((state) => state.bloods?.data);
+    const users = useSelector((state) => state.users?.data);
+    const staUser = users?.find(u => u.email == user?.email)
+    console.log(staUser)
+ 
+    useEffect(() => {
+        dispatch(fetchBloods())
+        dispatch(fetchUsers())
+    }, [dispatch])
+
     const handleLogout = () => {
         logoutUser()
             .then(() => { })
@@ -38,8 +53,27 @@ const Navbar = () => {
         setOpen(true)
 
     }
+
+    // useEffect(() => {
+    //     // Connecting to the WebSocket server
+    //     const socket = io('ws://localhost:5000/');
+
+    //     socket.on('message', (notificationMessage) => {
+    //         setNotifications((prevNotifications) => [...prevNotifications, notificationMessage]);
+    //         setUnreadCount((prevCount) => prevCount + 1);
+    //     });
+
+    //     // Cleaning up the WebSocket connection on component unmount
+    //     return () => {
+    //         socket.disconnect();
+    //     };
+    // }, []);
+
+    // const markAllAsRead = () => {
+    //     setUnreadCount(0);
+    // };
     return (
-        <div>
+        <div className=' '>
             <nav className='flex relative justify-around p-5 z-10'>
                 <div className='md:hidden'>
                     {
@@ -50,13 +84,13 @@ const Navbar = () => {
 
                 <div className='md:flex hidden'>
                     <img src={logo} alt="" className='w-8 h-8 animate-pulse' />
-                    <p className='font-bold font-serif mt-2 text-xl me-12 text-red-700'>BloodCareExchange</p>
+                    <p className='font-bold font-serif mt-2 text-xl me-12 text-red-700'><Link to='/'>BloodCareExchange</Link></p>
                 </div>
                 <div className=''>
-                    <ul className={`md:flex md:static absolute duration-500 md:mt-2  ${isOpen === true ? 'bg-slate-50 top-16 left-0 z-10 pb-5' : ' -top-56 left-0'}`}>
+                    <ul className={`md:flex md:static absolute duration-500 md:mt-2  ${isOpen === true ? 'bg-slate-50 top-16 left-0 z-10 pb-5' : ' -top-60 left-0'}`}>
 
                         <li className='mx-4'><NavLink className={({ isActive }) =>
-                            isActive ? "text-red-600" : ""} to='/'>Home </NavLink></li>
+                            isActive ? "text-red-600" : ""} to='/blood-need'>Need Blood</NavLink></li> <span className='bg-red-800 rounded-full w-5 ps-1  h-5 text-white -ms-3 text-xs'>{bloods?.length}+</span>
                         <BiDotsVerticalRounded className='mt-1 text-gray-400 h-5'></BiDotsVerticalRounded>
                         <li className='mx-4'><NavLink className={({ isActive }) =>
                             isActive ? "text-red-600" : ""} to='/services'>Services</NavLink></li>
@@ -83,13 +117,32 @@ const Navbar = () => {
                         {
                             user ? <> <button onClick={handleLogout} className='text-red-800 font-bold mx-3 btn'>Logout</button>
                                 <BiDotsVerticalRounded className='mt-1 text-gray-400 h-5'></BiDotsVerticalRounded>
-                                <li className='mx-3'>Notification</li>
-                                <BiDotsVerticalRounded className='mt-1 text-gray-400 h-5'></BiDotsVerticalRounded>
-                                <li className='mx-3'> <NavLink to='/dash-layout' className={({ isActive }) =>
-                                    isActive ? "text-red-600" : ""}>Dashboard</NavLink></li>
+                                
+                                {/* <li className='mx-3'>Notification </li><span className='bg-red-800 rounded-full w-5 ps-1  h-5 text-white -ms-3 text-xs'>{unreadCount}+</span>
+                                {
+                                    unreadCount > 0 &&
+                                    <div className="bg-red-50 p-5 rounded-md z-10">
+                                        {notifications.map((notification, index) => (
+                                            <div key={index} className="notification-item">
+                                                {notification}
+                                            </div>
+                                        ))}
+                                         <div className="text-red-800" onClick={markAllAsRead}>x</div>
+                                    </div>
+                                }
+
+
+
+                                // <BiDotsVerticalRounded className='mt-1 ms-1 text-gray-400 h-5'></BiDotsVerticalRounded>
+                                // <li className='mx-3'> <NavLink to='/dash-layout' className={({ isActive }) =>
+                                //     isActive ? "text-red-600" : ""}>Dashboard</NavLink></li> */}
 
                             </> :
                                 <Link to='/auth-layout/login' className='text-red-800 font-bold ms-3 btn'>Login</Link>
+                        }
+                        {
+                             staUser?.status &&  <li className='mx-3'> <NavLink to='/dash-layout' className={({ isActive }) =>
+                            isActive ? "text-red-600" : ""}>Dashboard</NavLink></li>
                         }
                     </ul>
                 </div>
@@ -104,10 +157,10 @@ const Navbar = () => {
             <div className=' z-10'>{
                 open === true && groups?.length > 0 &&
                 <>
-                <AiOutlineCloseCircle onClick={()=>setOpen(false)} className='w-10 h-8 bg-slate-300 text-red-500 ms-10'></AiOutlineCloseCircle>
-                <BloodGroupDonors donors={groups}></BloodGroupDonors>
+                    <AiOutlineCloseCircle onClick={() => setOpen(false)} className='w-10 h-8 bg-slate-300 text-red-500 ms-10'></AiOutlineCloseCircle>
+                    <BloodGroupDonors donors={groups}></BloodGroupDonors>
                 </>
-                 
+
             }
             </div>
         </div>
