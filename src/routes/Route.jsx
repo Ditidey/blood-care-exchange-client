@@ -23,6 +23,8 @@ import BloodTreatLearn from "../components/BloodTreatLearn";
 import UserProfile from "../pages/dashPage/userPages/UserProfile";
 import Research from "../pages/Home/Research";
 import BloodNeeded from "../pages/Home/HomeMain/BloodNeeded/BloodNeeded";
+import DoctorProfile from "../pages/dashPage/DoctorPage/DoctorProfile";
+import AdminProfile from "../pages/dashPage/AdminPage/AdminProfile";
 
 
 const router = createBrowserRouter([
@@ -127,6 +129,14 @@ const router = createBrowserRouter([
             {
                 path: 'user-pro',
                 element: <UserProfile></UserProfile>
+            },
+            {
+                path: 'doctor-pro',
+                element: <DoctorProfile></DoctorProfile>
+            },
+            {
+                path: 'admin-pro',
+                element: <AdminProfile></AdminProfile>
             }
         ]
     }

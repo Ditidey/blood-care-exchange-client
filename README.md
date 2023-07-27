@@ -25,6 +25,7 @@ The technologies used to develop Blood Care Exchange are as follows:
 ### Frontend:
 * JavaScript
 * ReactJS
+* WebSockets
 * Redux Toolkit (for state management)
 * Axios
 * React Icons (for icons)

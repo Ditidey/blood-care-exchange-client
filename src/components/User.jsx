@@ -46,7 +46,7 @@ const User = () => {
                     {
                         users?.map(user => <SwiperSlide key={user._id}>
                             <div className='p-5 md:flex relative md:ms-10 ms-5'>
-                                <img src={user.photo} alt="" className='w-80 h-80 rounded-full object-cover md:ms-44 ms-8' />
+                                <img src={user.photo} alt="" className='md:w-80 md:h-80 w-44 h-44 rounded-full object-cover md:ms-44 ms-8' />
                                 <div className='absolute md:left-40 top-24'>
                                     <Wave fill="#e62315" mask="url(#mask)" options={{ points: 20, speed: 0.2, amplitude: 40 }}>
                                         <mask id="mask">

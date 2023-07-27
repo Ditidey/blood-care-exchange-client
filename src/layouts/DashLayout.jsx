@@ -57,19 +57,19 @@ const DashLayout = () => {
                             curUser?.status == 'donor' && <>
                                 <li><NavLink to='/dash-layout/user-pro' className={({ isActive }) =>
                                     isActive ? "text-red-600" : ""}>Profile</NavLink></li>
-                                <li><NavLink to='/dash-layout/user-pro'>History</NavLink></li>
+                                <li><NavLink to='/dash-layout'></NavLink></li>
                             </>
                         }
                         {
                             curUser?.status == 'doctor' && <>
-                                <li><NavLink to='/dash-layout/user-pro'>Profile</NavLink></li>
-                                <li><NavLink to='/dash-layout/user-pro'>Profile</NavLink></li>
+                                <li><NavLink to='/dash-layout/doctor-pro'>Profile</NavLink></li>
+                                <li><NavLink to='/dash-layout'></NavLink></li>
                             </>
                         }
                         {
                             curUser?.status == 'admin' && <>
-                                <li><NavLink to='/dash-layout/user-pro'>Profile</NavLink></li>
-                                <li><NavLink to='/dash-layout/user-pro'>Profile</NavLink></li>
+                                <li><NavLink to='/dash-layout/admin-pro'>Profile</NavLink></li>
+                                <li><NavLink to='/dash-layout'></NavLink></li>
                             </>
                         }
 

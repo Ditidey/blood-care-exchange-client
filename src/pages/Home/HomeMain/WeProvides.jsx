@@ -12,10 +12,11 @@ const WeProvides = () => {
         Aos.init()
     }, [])
     return (
-        <div className='md:mt-44 mt-96 pt-96 md:pt-0 md:p-10 p-3'>
+      <div className=' md:pt-0  pt-64'>
+           <div className='md:mt-36 mt-96 pt-96 md:pt-0 md:p-10 p-3'>
             <br />
              <SecTitle title={'We Provide'}></SecTitle>
-            <div className='grid md:grid-cols-4 gap-6 pt-40 md:pt-0'>
+            <div className='grid md:grid-cols-4 gap-6  md:pt-0'>
 
                  <div className='py-3 shadow-xl rounded-md' data-aos="zoom-in-right" data-aos-duration="3000">
                     <img src={img} alt=""  className='w-full h-1/2'/>
@@ -55,6 +56,7 @@ const WeProvides = () => {
                  </div>
             </div>
         </div>
+      </div>
     );
 };
 

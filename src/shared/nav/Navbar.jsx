@@ -25,7 +25,7 @@ const Navbar = () => {
     const users = useSelector((state) => state.users?.data);
     const staUser = users?.find(u => u.email == user?.email)
     console.log(staUser)
- 
+
     useEffect(() => {
         dispatch(fetchBloods())
         dispatch(fetchUsers())
@@ -43,7 +43,7 @@ const Navbar = () => {
         event.preventDefault();
         const searchText = event.target.search.value;
         const encodedSearchInput = encodeURIComponent(searchText)
-        console.log(encodedSearchInput)
+        // console.log(encodedSearchInput)
         axiosFetching.get(`/users?group=${encodedSearchInput}`)
             .then(res => {
                 console.log(res.data)
@@ -73,18 +73,20 @@ const Navbar = () => {
     //     setUnreadCount(0);
     // };
     return (
-        <div className=' '>
-            <nav className='flex relative justify-around p-5 z-10'>
+        <div className='w-full'>
+            <nav className='flex relative justify-around p-2 md:p-5 z-10'>
                 <div className='md:hidden'>
                     {
-                        isOpen ? <RxCross2 className='w-10 h-8 mt-1 me-5' onClick={() => setIsOpen(!isOpen)}></RxCross2> :
-                            <BiMenuAltLeft className='w-10 h-8 mt-1 me-5' onClick={() => setIsOpen(!isOpen)}></BiMenuAltLeft>
+                        isOpen ? <RxCross2 className='w-10 h-8 mt-1 me-3' onClick={() => setIsOpen(!isOpen)}></RxCross2> :
+                            <BiMenuAltLeft className='w-10 h-8 mt-1 me-3' onClick={() => setIsOpen(!isOpen)}></BiMenuAltLeft>
                     }
                 </div>
 
-                <div className='md:flex hidden'>
-                    <img src={logo} alt="" className='w-8 h-8 animate-pulse' />
-                    <p className='font-bold font-serif mt-2 text-xl me-12 text-red-700'><Link to='/'>BloodCareExchange</Link></p>
+                <div className='md:flex'>
+                    <Link to='/'>
+                        <img src={logo} alt="" className='md:w-8 md:h-8 w-6 h-6 me-4 md:me-0 animate-pulse' />
+                    </Link>
+                    <p className='font-bold font-serif mt-2 text-xl md:flex hidden me-12 text-red-700'><Link to='/'>BloodCareExchange</Link></p>
                 </div>
                 <div className=''>
                     <ul className={`md:flex md:static absolute duration-500 md:mt-2  ${isOpen === true ? 'bg-slate-50 top-16 left-0 z-10 pb-5' : ' -top-60 left-0'}`}>
@@ -117,38 +119,20 @@ const Navbar = () => {
                         {
                             user ? <> <button onClick={handleLogout} className='text-red-800 font-bold mx-3 btn'>Logout</button>
                                 <BiDotsVerticalRounded className='mt-1 text-gray-400 h-5'></BiDotsVerticalRounded>
-                                
-                                {/* <li className='mx-3'>Notification </li><span className='bg-red-800 rounded-full w-5 ps-1  h-5 text-white -ms-3 text-xs'>{unreadCount}+</span>
-                                {
-                                    unreadCount > 0 &&
-                                    <div className="bg-red-50 p-5 rounded-md z-10">
-                                        {notifications.map((notification, index) => (
-                                            <div key={index} className="notification-item">
-                                                {notification}
-                                            </div>
-                                        ))}
-                                         <div className="text-red-800" onClick={markAllAsRead}>x</div>
-                                    </div>
-                                }
 
-
-
-                                // <BiDotsVerticalRounded className='mt-1 ms-1 text-gray-400 h-5'></BiDotsVerticalRounded>
-                                // <li className='mx-3'> <NavLink to='/dash-layout' className={({ isActive }) =>
-                                //     isActive ? "text-red-600" : ""}>Dashboard</NavLink></li> */}
 
                             </> :
                                 <Link to='/auth-layout/login' className='text-red-800 font-bold ms-3 btn'>Login</Link>
                         }
                         {
-                             staUser?.status &&  <li className='mx-3'> <NavLink to='/dash-layout' className={({ isActive }) =>
-                            isActive ? "text-red-600" : ""}>Dashboard</NavLink></li>
+                            staUser?.status && <li className='mx-3'> <NavLink to='/dash-layout' className={({ isActive }) =>
+                                isActive ? "text-red-600" : ""}>Dashboard</NavLink></li>
                         }
                     </ul>
                 </div>
-                <div>
+                <div className='w-1/3'>
                     <form action="" onSubmit={handleSearch}>
-                        <input type="text" name='search' placeholder='blood group' className=' w-1/2 border-gray-300 border-b-2' />
+                        <input type="text" name='search' placeholder='blood group' className='w-1/2 border-gray-300 border-b-2' />
                         <button type='submit'><BiSearch className='mt-2 w-5'></BiSearch></button>
                     </form>
 
