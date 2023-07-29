@@ -29,7 +29,7 @@ const RegularDonors = () => {
             <div className='grid md:grid-cols-3 gap-10 md:mx-14 mx-3'>
                 {
                     regularUsers?.map(user => 
-                    <div key={user._id} className='w-[400px] h-[500px] shadow-xl'>
+                    <div key={user._id} className='md:w-[400px] h-[500px] shadow-xl'>
                         <img src={user.photo} alt="" className='w-[200px] h-[200px] rounded-full mx-auto my-4'/>
                         <div className='text-center mt-12'>
                             <h2 className='text-xl font-serif font-bold relative'>{user.name} <span className='text-red-700 font-mono absolute -top-20 text-sm uppercase border-2 px-1'>{user.donor_class}</span></h2>

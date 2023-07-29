@@ -69,29 +69,29 @@ const Register = () => {
                             {errors.name && <span className='text-red-500'>Name is required</span>}
                         </div>
 
-                        <div className=' flex'>
+                        <div className=' md:flex'>
                             <div className="form-control  md:ms-32 mt-5">
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label> <br />
-                                <input type="text" placeholder="your photo" {...register("photo", { required: true })} className="border border-red-600 p-2 rounded-md w-full" />
+                                <input type="text" placeholder="your photo" {...register("photo", { required: true })} className="border border-red-600 p-2 rounded-md md:w-full w-2/3" />
                                 {errors.photo && <span className='text-red-500'>Photo is required</span>}
                             </div>
                             <div className=" md:ms-32 mt-5 ">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label> <br />
-                                <input type="email" placeholder="email" {...register("email", { required: true })} className="border border-red-600 p-2 rounded-md w-full" />
+                                <input type="email" placeholder="email" {...register("email", { required: true })} className="border border-red-600 p-2 rounded-md md:w-full w-2/3" />
                                 {errors.email && <span className='text-red-500'>Email is required</span>}
                             </div>
                         </div>
 
-                        <div className="flex">
+                        <div className="md:flex">
                             <div className=" md:ms-32 mt-5">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label> <br />
-                                <input type="password" placeholder="password" {...register("password", { required: true, minLength: 6, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()])[a-zA-Z!@#$%^&*()]{6,}$/ })} className="border border-red-600 p-2 rounded-md w-full" />
+                                <input type="password" placeholder="password" {...register("password", { required: true, minLength: 6, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()])[a-zA-Z!@#$%^&*()]{6,}$/ })} className="border border-red-600 p-2 rounded-md md:w-full w-2/3" />
                                 {errors.password && <span className='text-red-500'>{errors.password?.message}</span>}
                                 {errors.password?.type == 'minLength' && <p className='text-red-500'>Password should be at least 6 characters long.</p>}
                                 {errors.password?.type === 'pattern' && (
@@ -104,7 +104,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Confirm password</span>
                                 </label> <br />
-                                <input type="password" placeholder="confirm password" {...register("confirm", { required: true, validate: (value) => value === watchPassword || 'The passwords do not match', })} className="border border-red-600 p-2 rounded-md w-full" />
+                                <input type="password" placeholder="confirm password" {...register("confirm", { required: true, validate: (value) => value === watchPassword || 'The passwords do not match', })} className="border border-red-600 p-2 rounded-md md:w-full w-2/3" />
                                 {errors.confirm && <span className='text-red-500'>{errors.confirm?.message}</span>}
                             </div>
                         </div>
@@ -116,7 +116,7 @@ const Register = () => {
                     </div>
                 </form>
 
-                <p className='text-blue-800 mb-10 md:ms-36 mt-2 pb-20'> Already have an account? <Link to='/auth-layout/login'>Login</Link></p>
+                <p className='text-blue-800 mb-10 md:ms-36 ms-5 mt-2 pb-20'> Already have an account? <Link to='/auth-layout/login'>Login</Link></p>
             </div>
 
         </div>

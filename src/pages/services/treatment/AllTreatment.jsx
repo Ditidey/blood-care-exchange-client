@@ -33,9 +33,9 @@ const AllTreatment = () => {
         setDoctorsTreat(groupDoctors)
     }
     return (
-        <div className='md:flex p-10 bg-red-50'>
-             <div className='flex h-[1300px]'>
-             <div className='grid   '>
+        <div className='md:flex md:p-10 p-3 bg-red-50'>
+             <div className='md:flex md:h-[1300px]'>
+             <div className='grid  md:gap-0 gap-5 '>
                 <div className='border-2 rounded-sm border-red-800 p-5   w-[320px] h-[400px]'>
                     <h2 className='text-center text-2xl font-bold mb-2'>Bone Marrow Transplantation</h2>
                     <p>It involves replacing damaged or diseased bone marrow with healthy stem cells. </p>
@@ -71,7 +71,7 @@ const AllTreatment = () => {
                 </div>
             </div>
 
-            <div className='grid  gap-5 ms-8 mt-20'>
+            <div className='grid  gap-5 md:ms-8 md:mt-20 mt-5'>
                 <div className='border-2 rounded-sm border-red-800  p-5   w-[320px] h-[400px]'>
                     <h2 className='text-center text-2xl font-bold mb-2'>Chemotherapy</h2>
                     <p>It is a systemic treatment that uses drugs to destroy or inhibit the growth of cancer cells in the blood or bone marrow </p>

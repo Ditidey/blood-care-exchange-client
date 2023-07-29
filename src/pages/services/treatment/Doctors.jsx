@@ -14,13 +14,13 @@ const Doctors = ({ doctors }) => {
          setOpenModal(false)
     }
     return (
-        <div className='md:mx-10 p-8'>
+        <div className='md:mx-10 md:p-8 p-3'>
             {doctors?.length < 0 && <h2 className='text-3xl font-bold font-serif text-red-900 text-center mb-5'>Not Available Now. Coming soon</h2>}
             <h2 className='text-3xl font-bold font-serif text-red-900 text-center mb-5'>Select Doctor</h2>
             {
                 doctors?.length > 0 && doctors && <>
 
-                    <table className='shadow-md p-10 '>
+                    <table className='shadow-md md:p-10 overflow-x-auto'>
                         <thead className=''>
                             <tr className='w-full'>
                                 <th className='mx-5 p-2 shadow-xl'>Name</th>

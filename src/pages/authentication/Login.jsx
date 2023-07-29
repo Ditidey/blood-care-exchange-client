@@ -41,7 +41,7 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email: </span>
                             </label> <br />
-                            <input type="email" placeholder="your email" {...register("email", { required: true })} className="border border-red-600 p-2 rounded-md w-1/3" />
+                            <input type="email" placeholder="your email" {...register("email", { required: true })} className="border border-red-600 p-2 rounded-md md:w-1/3 w-2/3" />
                             {errors.email && <span className='text-red-500'>Email is required</span>}
                         </div>
 
@@ -49,11 +49,11 @@ const Login = () => {
                             <label className="label">
                                 <span className="">Password: </span>
                             </label> <br />
-                            <input type="password" placeholder="password" {...register("password", { required: true })} className="border border-red-600 p-2 rounded-md w-1/3" />
+                            <input type="password" placeholder="password" {...register("password", { required: true })} className="border border-red-600 p-2 rounded-md md:w-1/3 w-2/3" />
                             {errors.password && <span className='text-red-500'>Password is required</span>}
                         </div>
                         <div className="form-control mt-6 md:ms-32">
-                            <button type='submit' className="border bg-red-700 text-white p-2 rounded-md w-1/3">Login</button>
+                            <button type='submit' className="border bg-red-700 text-white p-2 rounded-md md:w-1/3 w-2/3">Login</button>
                         </div>
                     </div>
                 </form>

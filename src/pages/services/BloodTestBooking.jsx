@@ -49,13 +49,13 @@ const BloodTestBooking = () => {
     return (
         <div className='md:flex md:justify-between'>
             
-            <div className='md:px-10 bg-red-800 p-5'>
+            <div className='md:px-10 bg-red-800 p-3 md:p-5'>
                 <h2 className='text-red-50 text-3xl font-bold font-serif text-center pt-3'>Book Now</h2>
-                <div className='w-[400px] h-[220px] mx-auto bg-yellow-100 my-5 p-4 shadow-md rounded-md'>
+                <div className='md:w-[400px] h-[220px] mx-auto bg-yellow-100 my-5 p-4 shadow-md rounded-md'>
                     <Calendar onChange={onChange} value={valueDate} />
                 </div>
 
-                <form action="" onSubmit={handleSubmit(handleBloodTest)} className='w-[400px] mx-auto p-4 bg-red-100 shadow-md mb-5 '>
+                <form action="" onSubmit={handleSubmit(handleBloodTest)} className='md:w-[400px] mx-auto p-4 bg-red-100 shadow-md mb-5 '>
                     <div className='space-y-6'>
                         <div>
                             <label htmlFor="">Name</label> <br />
