@@ -12,8 +12,8 @@ const MainLayout = () => {
 
             <div>
                 <MessengerCustomerChat
-                    pageId="101055286412109"
-                    appId="1729280587500320"
+                    pageId="101427393054301"
+                    appId="23959069367017893"
                
                 />,
             </div>
