@@ -7,28 +7,17 @@ import DonorsDivide from './DonorsDivide';
 import User from '../../../components/user';
 import WeProvides from './WeProvides';
 import HomeConsultan from './HomeConsultan';
+import DonationBenifits from './benifits/DonationBenifits';
+import Ads from './Ads';
 const HomeMain = () => {
     return (
         <div> 
-        {/* // <Parallax pages={4}   className='animation'  >
-        //     <ParallaxLayer offset={0} speed={0.5} >
-                <Banner></Banner>
-            // </ParallaxLayer>
-            // <ParallaxLayer offset={1} speed={0.3} >
-            //     <div id='blood2' className='layer parallax'></div>
-            // </ParallaxLayer>
-            // <ParallaxLayer offset={2} speed={.7} >
-                 <DonorsDivide></DonorsDivide>
-            // </ParallaxLayer>
-            // <ParallaxLayer offset={3} speed={0.5} >
-                  <User></User>
-            // </ParallaxLayer>
-
-        // </Parallax> */}
-        <Banner></Banner>
+        <Banner></Banner>      
         <WeProvides></WeProvides>
+        <DonationBenifits></DonationBenifits>
         <HomeConsultan></HomeConsultan>
         <DonorsDivide></DonorsDivide>
+        <Ads></Ads>
         <User></User>
         </div>
     );
